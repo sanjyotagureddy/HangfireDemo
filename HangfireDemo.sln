@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HangfireDemo", "HangfireDemo\HangfireDemo.csproj", "{0290964C-5A19-4D57-A976-8B9AEB39E469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BffLayer", "BffLayer\BffLayer.csproj", "{BBD82CC8-E385-45CE-BCD1-0DEF6A5887C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0290964C-5A19-4D57-A976-8B9AEB39E469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0290964C-5A19-4D57-A976-8B9AEB39E469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0290964C-5A19-4D57-A976-8B9AEB39E469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0290964C-5A19-4D57-A976-8B9AEB39E469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD82CC8-E385-45CE-BCD1-0DEF6A5887C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD82CC8-E385-45CE-BCD1-0DEF6A5887C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD82CC8-E385-45CE-BCD1-0DEF6A5887C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD82CC8-E385-45CE-BCD1-0DEF6A5887C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B43BFB4-0F31-4986-8471-0148F25F01F8}
+	EndGlobalSection
+EndGlobal

@@ -33,10 +33,10 @@ namespace BffLayer.Controllers
     }
 
     [HttpPost("notifyJobCompletion")]
-    public async Task<IActionResult> NotifyJobCompletion([FromBody] JobResult result)
+    public async Task<IActionResult> NotifyJobCompletion([FromBody] User result)
     {
-      await _hubContext.Clients.Group(result.JobId).SendAsync("JobCompleted", result);
-      return Ok();
+      await _hubContext.Clients.Group(result.Name).SendAsync("JobCompleted", result);
+      return Ok(result);
     }
   }
 

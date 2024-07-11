@@ -1,4 +1,5 @@
-﻿using Hangfire;
+﻿using Bogus;
+using Hangfire;
 
 namespace HangfireDemo;
 
@@ -17,11 +18,13 @@ public class JobProcessor
     // Simulate job processing
     await Task.Delay(5000); // Simulating work by delaying for 5 seconds
 
-    var result = new JobResult
+    Faker fake = new Faker();
+    var result = new User()
     {
-      JobId = jobId,
-      Status = "Completed",
-      // Additional result data
+      City = fake.Address.City(),
+      Name = fake.Name.FullName(),
+      Email = fake.Internet.Email()
+
     };
 
     // Notify BFF service

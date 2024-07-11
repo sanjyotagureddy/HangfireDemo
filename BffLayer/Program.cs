@@ -23,11 +23,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-app.UseEndpoints(endpoints =>
-{
-  endpoints.MapControllers();
-  endpoints.MapHub<JobHub>("/jobHub");
-});
-app.MapControllers();
 
+app.MapControllers();
+app.MapHub<JobHub>("/jobHub");
 app.Run();

@@ -15,11 +15,13 @@ The Job Status Application addresses the need for real-time monitoring and manag
 3. [Functionality](#functionality)
    - [Job Execution Flow](#job-execution-flow)
    - [Error Handling](#error-handling)
-4. [Setup Instructions](#setup-instructions)
+4. [Data Flow](#data-flow)
+5. [Setup Instructions](#setup-instructions)
    - [Prerequisites](#prerequisites)
    - [Installation and Configuration](#installation-and-configuration)
-5. [Conclusion](#conclusion)
-6. [Future Enhancements](#future-enhancements)
+6. [Conclusion](#conclusion)
+7. [Future Enhancements](#future-enhancements)
+
 
 ## Introduction
 
@@ -71,6 +73,31 @@ The Job Status Application is designed to provide real-time updates on job execu
 - Error handling is implemented at multiple levels:
   - Angular frontend displays error messages if job start or updates fail.
   - Backend logs errors and provides appropriate HTTP responses.
+
+## Data Flow
+
+### Flow of Data
+
+1. **Initiation (Angular to BFF)**:
+   - The user initiates a job from the Angular frontend by clicking the "Start Job" button.
+   - Angular sends a POST request to the BFF service's API endpoint to start the job.
+
+2. **Job Enqueue (BFF to Hosted Service)**:
+   - The BFF service receives the request and enqueues the job by calling the Hosted Service's API endpoint.
+   - The BFF service sends a response back to the Angular frontend confirming that the job has been enqueued.
+
+3. **Job Execution (Hosted Service)**:
+   - The Hosted Service picks up the job from the queue and begins execution.
+   - The Hosted Service periodically sends status updates to the BFF service using SignalR.
+
+4. **Real-Time Updates (BFF to Angular)**:
+   - The BFF service forwards the job status updates to the Angular frontend using SignalR.
+   - The Angular app receives these updates and dynamically updates the UI to reflect the current status of the job.
+
+5. **Completion (Hosted Service to BFF to Angular)**:
+   - Upon job completion, the Hosted Service sends a final status update to the BFF service.
+   - The BFF service forwards this final update to the Angular frontend, which displays the completion status to the user.
+
 
 ## Setup Instructions
 
